@@ -20,9 +20,8 @@ importFrom(S4Vectors, queryHits, subjectHits, metadata)
 importFrom(edgeR, DGEList, estimateDisp, estimateExonGenewiseDisp, exactTest, 
 	topTags, estimateGLMTagwiseDisp, estimateGLMTrendedDisp, 
 	estimateGLMCommonDisp, glmFit, glmLRT, glmQLFit, glmQLFTest, glmTreat)
-importFrom(GenomicFeatures, makeTxDbFromUCSC, 
-	makeTxDbFromBiomart, makeTxDbFromGFF, exonsBy, transcriptsBy, 
-	intronsByTranscript)
+importFrom(GenomicFeatures, exonsBy, transcriptsBy, intronsByTranscript)
+importFrom(txdbmaker, makeTxDbFromUCSC, makeTxDbFromBiomart, makeTxDbFromGFF)
 importFrom(GenomicRanges, seqnames, start, end, width, strand, ranges, GRanges, 
 	findOverlaps, reduce, gaps)
 importFrom(Rsamtools, BamFile, ScanBamParam, scanBamFlag, scanBamWhat, isOpen)
