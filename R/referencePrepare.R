@@ -22,11 +22,11 @@ function( outFileTranscriptsAnnotation="",
 #		circSeqs=GenomicFeatures::DEFAULT_CIRC_SEQS
 
 	if(sourceBuild=="UCSC"){
-		human.txdb <- GenomicFeatures::makeTxDbFromUCSC(genome=ucscGenome,
+		human.txdb <- txdbmaker::makeTxDbFromUCSC(genome=ucscGenome,
 			tablename=ucscTableName, circ_seqs=circSeqs, url=ucscUrl,
 			taxonomyId=taxonomyId)
 	} else if (sourceBuild=="biomaRt"){
-		human.txdb=GenomicFeatures::makeTxDbFromBiomart(biomart=biomart,
+		human.txdb <- txdbmaker::makeTxDbFromBiomart(biomart=biomart,
 			dataset=biomartDataset,
 			transcript_ids=biomartTranscriptIds,
 			circ_seqs=circSeqs,
@@ -38,14 +38,14 @@ function( outFileTranscriptsAnnotation="",
 			taxonomyId=taxonomyId)
 	}else if (sourceBuild=="file"){
 		if(length(fileDbXrefTag)==0){
-			human.txdb=GenomicFeatures::makeTxDbFromGFF(file=filePath,
+			human.txdb <- txdbmaker::makeTxDbFromGFF(file=filePath,
 				format=fileFormat,
 				dataSource=fileDatSrc, organism=fileOrganism,
 				taxonomyId=taxonomyId,
 				circ_seqs=circSeqs, chrominfo=fileChrInf,
 				miRBaseBuild=miRBaseBuild)
 		} else {
-			human.txdb=GenomicFeatures::makeTxDbFromGFF(file=filePath,
+			human.txdb <- txdbmaker::makeTxDbFromGFF(file=filePath,
 				format=fileFormat, 
 				dataSource=fileDatSrc, organism=fileOrganism, 
 				taxonomyId=taxonomyId, 
